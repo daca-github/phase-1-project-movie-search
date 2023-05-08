@@ -18,5 +18,15 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         })
     }
-    
+    function displayMovies(movies) {
+        const movieElements = movies.map((movie) => {
+            return `
+            <div class="movie">
+                <h3>${movie.Title}</h3>
+                <p>Year: ${movie.Year}</p>
+            </div>
+            `
+        })
+        
+    }
 })
