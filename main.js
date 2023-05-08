@@ -50,4 +50,16 @@ document.addEventListener("DOMContentLoaded", () => {
             fetchMovieDetails(imdbID)
         }
     }
+    async function fetchMovieDetails(imdbID) {
+        const detailsContainer = document.getElementById("div")
+        detailsContainer.innerHTML = `
+        <h2>${movie.Title} (${movie.Year})</h2>
+        <img src="${movie.Poster}" alt="${movie.Title} poster">
+        <p>Genre: ${movie.Genre}</p>
+        <p>Director: ${movie.Director}</p>
+        <p>Actors: ${movie.Actors}</p>
+        <p>Plot: ${movie.Plot}</p>
+        <p>IMDB Rating: ${movie.imdbRating}/10</p>
+    `
+    }
 });
