@@ -44,5 +44,10 @@ document.addEventListener("DOMContentLoaded", () => {
         );
         moviesContainer.innerHTML = movieElements.join("");
     }
-    
+    function handleDeatilsButton(event) {
+        if (event.tager.classList.contains("view-details")) {
+            const imdbID = event.target.getAttribute("data-imdbid")
+            fetchMovieDetails(imdbID)
+        }
+    }
 });
