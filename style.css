@@ -9,3 +9,12 @@ header {
     text-align: center;
     padding: 1rem;
 }
+main{
+    padding: 2rem;
+}
+form {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
