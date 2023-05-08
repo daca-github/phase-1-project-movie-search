@@ -10,6 +10,13 @@ document.addEventListener("DOMContentLoaded", () => {
     function searchMovies(searchTerm) {
         fetch(`http://www.omdbapi.com/?i=tt3896198&apikey=4f389c01${searchTerm}`)
         .then((response) => response.json())
-        
+        .then((data) => {
+            if (data.response === "True") {
+                displayMovies(data.Search)
+            } else {
+                moviesContainer.innerhtml = `<p> No Results for "${searchTerm}". </p>`
+            }
+        })
     }
+    
 })
