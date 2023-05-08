@@ -25,6 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
             return `
                 <div class="movie">
                     <h3>${movie.Title}</h3>
+                    <img src"${movie.Poster}" alt= "${movie.Title} poster">
                     <p>Year: ${movie.Year}</p>
                 </div>
             `;
