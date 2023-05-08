@@ -6,4 +6,10 @@ document.addEventListener("DOMContentLoaded", () => {
         event.preventDefault()
         searchMovies(searchInput.value)
     })
+
+    function searchMovies(searchTerm) {
+        fetch(`http://www.omdbapi.com/?i=tt3896198&apikey=4f389c01${searchTerm}`)
+        .then((response) => response.json())
+        
+    }
 })
