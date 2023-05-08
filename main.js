@@ -20,16 +20,29 @@ document.addEventListener("DOMContentLoaded", () => {
             });
     }
 
-    function displayMovies(movies) {
-        const movieElements = movies.map((movie) => {
-            return `
-                <div class="movie">
-                    <h3>${movie.Title}</h3>
-                    <img src"${movie.Poster}" alt= "${movie.Title} poster">
-                    <p>Year: ${movie.Year}</p>
-                </div>
-            `;
+    function getValidImageSrc(src) {
+        return new Promise((resolve) => {
+            const img = new Image();
+            img.src = src;
+            img.onload = () => resolve(src);
+            img.onerror = () => resolve("https://via.placeholder.com/300x450?text=No+Image");
         });
+    }
+    
+    async function displayMovies(movies) {
+        const movieElements = await Promise.all(
+            movies.map(async (movie) => {
+                const poster = await getValidImageSrc(movie.Poster);
+                return `
+                    <div class="movie movie-card">
+                        <h3>${movie.Title}</h3>
+                        <img src="${poster}" alt="${movie.Title} poster">
+                        <p>Year: ${movie.Year}</p>
+                    </div>
+                `;
+            })
+        );
         moviesContainer.innerHTML = movieElements.join("");
     }
+    
 });
