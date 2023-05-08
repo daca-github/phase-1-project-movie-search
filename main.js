@@ -51,6 +51,9 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
     async function fetchMovieDetails(imdbID) {
+        const response = await fetch(`http://www.omdbapi.com/?apikey=4f389c01&i=${imdbID}`)
+        const movie = await response.json()
+        
         const detailsContainer = document.getElementById("div")
         detailsContainer.innerHTML = `
         <h2>${movie.Title} (${movie.Year})</h2>
@@ -61,5 +64,8 @@ document.addEventListener("DOMContentLoaded", () => {
         <p>Plot: ${movie.Plot}</p>
         <p>IMDB Rating: ${movie.imdbRating}/10</p>
     `
+    moviesContainer.innerHTML = ""
+    moviesContainer.appendChild(detailsContainer)
     }
+    moviesContainer.addEventListener("click", handleDeatilsButtonClick)
 });
