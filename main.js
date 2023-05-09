@@ -65,6 +65,7 @@ document.addEventListener("DOMContentLoaded", () => {
         <p>Actors: ${movie.Actors}</p>
         <p>Plot: ${movie.Plot}</p>
         <p>IMDB Rating: ${movie.imdbRating}/10</p>
+        <p>Awards: ${movie.Awards}</p>
         <button id="go-home">Go Home</button>
         `
     moviesContainer.innerHTML = "";
