@@ -65,9 +65,14 @@ document.addEventListener("DOMContentLoaded", () => {
         <p>Actors: ${movie.Actors}</p>
         <p>Plot: ${movie.Plot}</p>
         <p>IMDB Rating: ${movie.imdbRating}/10</p>
+        <button id="go-home">Go Home</button>
         `
     moviesContainer.innerHTML = ""
     moviesContainer.appendChild(detailsContainer)
+    
+    document.getElementById("go-home").addEventListener("click", () =>{
+        searchMovies(searchInput.value)
+    })
     }
 
     moviesContainer.addEventListener("click", handleDetailsButtonClick);
