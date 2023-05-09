@@ -28,7 +28,6 @@ document.addEventListener("DOMContentLoaded", () => {
             img.onerror = () => resolve("https://via.placeholder.com/300x450?text=No+Image");
         });
     }
-    
     async function displayMovies(movies) {
         const movieElements = await Promise.all(
             movies.map(async (movie) => {
@@ -38,23 +37,26 @@ document.addEventListener("DOMContentLoaded", () => {
                         <h3>${movie.Title}</h3>
                         <img src="${poster}" alt="${movie.Title} poster">
                         <p>Year: ${movie.Year}</p>
+                        <button class="view-details" data-imdbid="${movie.imdbID}">View Details</button>
                     </div>
                 `;
             })
         );
         moviesContainer.innerHTML = movieElements.join("");
     }
-    function handleDeatilsButton(event) {
-        if (event.tager.classList.contains("view-details")) {
-            const imdbID = event.target.getAttribute("data-imdbid")
-            fetchMovieDetails(imdbID)
+
+    function handleDetailsButtonClick(event) {
+        if (event.target.classList.contains("view-details")) {
+            const imdbID = event.target.getAttribute("data-imdbid");
+            fetchMovieDetails(imdbID);
         }
     }
+
     async function fetchMovieDetails(imdbID) {
         const response = await fetch(`http://www.omdbapi.com/?apikey=4f389c01&i=${imdbID}`)
         const movie = await response.json()
-        
-        const detailsContainer = document.getElementById("div")
+
+        const detailsContainer = document.createElement("div")
         detailsContainer.innerHTML = `
         <h2>${movie.Title} (${movie.Year})</h2>
         <img src="${movie.Poster}" alt="${movie.Title} poster">
@@ -63,9 +65,10 @@ document.addEventListener("DOMContentLoaded", () => {
         <p>Actors: ${movie.Actors}</p>
         <p>Plot: ${movie.Plot}</p>
         <p>IMDB Rating: ${movie.imdbRating}/10</p>
-    `
+        `
     moviesContainer.innerHTML = ""
     moviesContainer.appendChild(detailsContainer)
     }
-    moviesContainer.addEventListener("click", handleDeatilsButtonClick)
+
+    moviesContainer.addEventListener("click", handleDetailsButtonClick);
 });
