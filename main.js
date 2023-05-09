@@ -53,8 +53,8 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     async function fetchMovieDetails(imdbID) {
-        const response = await fetch(`http://www.omdbapi.com/?apikey=4f389c01&i=${imdbID}`)
-        const movie = await response.json()
+        const response = await fetch(`http://www.omdbapi.com/?apikey=4f389c01&i=${imdbID}`);
+        const movie = await response.json();
 
         const detailsContainer = document.createElement("div")
         detailsContainer.innerHTML = `
@@ -67,12 +67,12 @@ document.addEventListener("DOMContentLoaded", () => {
         <p>IMDB Rating: ${movie.imdbRating}/10</p>
         <button id="go-home">Go Home</button>
         `
-    moviesContainer.innerHTML = ""
-    moviesContainer.appendChild(detailsContainer)
+    moviesContainer.innerHTML = "";
+    moviesContainer.appendChild(detailsContainer);
     
     document.getElementById("go-home").addEventListener("click", () =>{
-        searchMovies(searchInput.value)
-    })
+        searchMovies(searchInput.value);
+    });
     }
 
     moviesContainer.addEventListener("click", handleDetailsButtonClick);
