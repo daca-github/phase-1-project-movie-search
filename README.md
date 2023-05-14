@@ -22,7 +22,7 @@ This is a simple web application that allows users to search for movies by name.
 To set up this project on your local machine, follow these steps:
 
 1. Clone this repository to your local machine.
-2. Open the index.html file in your preferred web browser using the command `explorer.exe index.thml`
+2. Open the index.html file in your preferred web browser using the command `explorer.exe index.html`
 3. Start searching for movies!
 ### Future Improvements
 - Implement pagination to handle large numbers of search results.
