@@ -9,9 +9,9 @@ This is a simple web application that allows users to search for movies by name.
 - Dark mode toggle for improved user experience
 - Error handling for unsuccessful API requests
 ## Technologies Used
-- HTML5
-- CSS3
-- JavaScript (ES6)
+- HTML
+- CSS
+- JavaScript
 - OMDB API
 ## How to Use
 1. Enter a movie name in the search bar and hit the "Search" button or press enter.
