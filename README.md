@@ -19,7 +19,14 @@ This is a simple web application that allows users to search for movies by name.
 3. Click on the "View Details" button on a movie card to view more details about that movie.
 4. Click on the "Toggle Dark Mode" button to switch between light mode and dark mode.
 ## Local Development
+
+
 ![2023-05-14_16-41-18_AdobeExpress_AdobeExpress](https://github.com/daca-github/phase-1-project-movie-search/assets/125937256/d00fa504-00f6-4b67-bbb7-6424c3250293)
+
+
+
+
+
 
 To set up this project on your local machine, follow these steps:
 1. Clone this repository to your local machine.
