@@ -75,10 +75,10 @@ document.addEventListener("DOMContentLoaded", () => {
         searchMovies(searchInput.value);
     });
     }
+    
     document.getElementById('dark-mode-toggle').addEventListener('click', function() {
         document.body.classList.toggle('dark-mode');
     });
     
-
     moviesContainer.addEventListener("click", handleDetailsButtonClick);
 });
